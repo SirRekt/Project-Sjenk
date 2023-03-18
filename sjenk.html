@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sjenk</title>
+	<script>
+		function sjenk() {
+			var time_sleep = parseInt(document.getElementById("time_sleep").value);
+			var day_week = document.getElementById("day_week").value.toLowerCase();
+			var availability = document.getElementById("availability").value.toLowerCase() == "y";
+			var zin = document.getElementById("zin").value.toLowerCase() == "y";
+			var url = "https://www.youtube.com/watch?v=5QCaaAyz-yA&ab_channel=MovieManiac";
+			if (day_week == "friday" || day_week == "saturday") {
+				if (time_sleep >= 8 && availability && zin) {
+					window.open(url);
+					alert("Time for Snoop!");
+				} else {
+					alert("Sorry, you should not smoke weed today. Make sure there is weed nearby, you have zin, it is Friday or Saturday, and you have at least 8 hours of sleep ahead of you.");
+					window.open("https://www.youtube.com/watch?v=yMRJlhdahjc&ab_channel=ABC7");
+				}
+			} else {
+				alert("Sorry, you should not smoke weed today. Make sure it is Friday or Saturday.");
+				window.open("https://www.youtube.com/watch?v=yMRJlhdahjc&ab_channel=ABC7");
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Sjenk</h1>
+	<label for="time_sleep">How many hours of sleep do you have in front of you? (give number)</label><br>
+	<input type="number" id="time_sleep"><br>
+	<label for="day_week">What day of the week is it?</label><br>
+	<input type="text" id="day_week"><br>
+	<label for="availability">Do you have weed close to you? [y/n]</label><br>
+	<input type="text" id="availability"><br>
+	<label for="zin">Do you have zin? [y/n]</label><br>
+	<input type="text" id="zin"><br><br>
+	<button onclick="sjenk()">Sjenk</button>
+</body>
+</html>
